@@ -39,7 +39,7 @@ class DonasiSeeder extends Seeder
         // Loop untuk membuat 50 data donasi
         for ($i = 0; $i < 50; $i++) {
             
-            // Buat tanggal donasi secara acak dalam rentang 90 hari terakhir
+            // Buat tanggal donasi secara acak dalam rentang 250 hari terakhir
             $tanggalDonasi = Carbon::now()->subDays(rand(0, 250));
 
             Donasi::create([

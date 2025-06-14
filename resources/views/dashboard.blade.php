@@ -312,11 +312,11 @@ function drawDonasiChart(kegiatanId = null) {
                         label: 'Total Donasi',
                         data: data.data,
                         borderWidth: 2,
-                        backgroundColor: 'rgba(63,82,227,.8)',
-                        borderColor: 'rgba(63,82,227,.8)',
+                        backgroundColor: '#015D2E',
+                        borderColor: '#015D2E',
                         pointBorderWidth: 0,
                         pointRadius: 3.5,
-                        pointBackgroundColor: 'rgba(63,82,227,.8)',
+                        pointBackgroundColor: '#015D2E',
                     }]
                 },
                 // --- PERUBAHAN DI SINI UNTUK KOMPATIBILITAS CHART.JS v2 ---

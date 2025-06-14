@@ -30,7 +30,7 @@ class DaftarDonasiController extends Controller
             'judul' => 'required|max:255',
             'kategori_id' => 'required',
             'deskripsi' => 'required',
-            'foto' => 'image|file|max:1024' // Foto bisa null saat create
+            'foto' => 'image|file|max:5000' // Foto bisa null saat create
         ]);
 
         if ($request->file('foto')) {
@@ -57,7 +57,7 @@ class DaftarDonasiController extends Controller
             'judul' => 'required|max:255',
             'kategori_id' => 'required',
             'deskripsi' => 'required',
-            'foto' => 'image|file|max:1024'
+            'foto' => 'image|file|max:5000'
         ];
 
         $validateData = $request->validate($rules);

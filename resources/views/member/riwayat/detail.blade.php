@@ -30,7 +30,7 @@
                 <div class="col-md-6 text-md-right">
                   <address>
                     <strong>Dikirim :</strong><br>
-                   IDonation<br>
+                   TekomDonate<br>
                    Banjarbaru, Indonesia
                   </address>
                 </div>

@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>IDONATION</title>
+		<title>TekomDonate</title>
 
 		<style>
 			.invoice-box {
@@ -129,9 +129,9 @@
 								</td>
 
 								<td>
-									IDonation.<br />
-								Banjarbaru<br />
-									Kalimantan Selatan
+									TekomDonate.<br />
+								Padang<br />
+									UNAND
 								</td>
 							</tr>
 						</table>
