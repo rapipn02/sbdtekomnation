@@ -17,8 +17,8 @@
                 <li class="{{ request()->is('dashboard') ? 'active' : '' }}"><a class="nav-link" href="/dashboard"><i
                             class="fas fa-home"></i> <span>Dashboard</span></a></li>
                 <li class="menu-header">Data</li>
-                <li class="{{ request()->is('dashboard/user*') ? 'active' : '' }}"><a class="nav-link"
-                        href="/dashboard/user"><i class="fas fa-users"></i> <span>Data User</span></a></li>
+                <li class="{{ request()->is('dashboard/users*') ? 'active' : '' }}"><a class="nav-link"
+                        href="/dashboard/users"><i class="fas fa-users"></i> <span>Data User</span></a></li>
                 <li class="{{ request()->is('dashboard/kategori*') ? 'active' : '' }}"><a class="nav-link"
                         href="/dashboard/kategori"><i class="fas fa-clipboard-list"></i><span>Data Kategori
                             Donasi</span></a></li>

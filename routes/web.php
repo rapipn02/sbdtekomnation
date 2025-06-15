@@ -50,16 +50,18 @@ Route::middleware('auth')->group(function () {
 
 // HALAMAN KHUSUS ADMIN
 Route::middleware(['auth', 'verified', 'admin'])->group(function () {
-    Route::prefix('dashboard')->group(function () {
+    Route::prefix('dashboard')->name('dashboard.')->group(function () {
         Route::resource('/kategori', KategoriController::class);
         Route::resource('/daftar-donasi', DaftarDonasiController::class);
         Route::get('/riwayat-donasi', [RiwayatDonasiController::class, 'index']);
-        Route::resource('/user', UserController::class); // Asumsi untuk manajemen user
+        
+        // Diubah dari '/user' menjadi '/users' agar konsisten
+        Route::resource('/users', UserController::class); 
+
         Route::resource('/pengeluaran', PengeluaranController::class);
     });
     Route::get('/api/donasi/{daftarDonasi}/total', [DaftarDonasiController::class, 'getTotalDonasi']);
 });
-
 
 // HALAMAN KHUSUS PENGGUNA BIASA
 Route::middleware(['auth', 'verified'])->group(function () {
