@@ -19,17 +19,19 @@
             <div class="row">
                 <div class="col-12">
                     <article class="article article-style-c">
+                        {{-- WADAH GAMBAR --}}
                         <div class="article-header">
-                          
-                           @if($donasi->foto && $donasi->foto !== 'default.jpg' && Storage::disk('public')->exists($donasi->foto))
-                            <div class="article-image detail-donasi-image" data-background="{{ asset('storage/' . $donasi->foto) }}"> {{-- Tambah class 'detail-donasi-image' --}}
-                            </div>
-                        @else
-                            <div class="article-image detail-donasi-image" data-background="{{ asset('assets/img/news/img13.jpg') }}"> {{-- Tambah class 'detail-donasi-image' --}}
-                            </div>
-                        @endif
+                            @if($donasi->foto && $donasi->foto !== 'default.jpg' && Storage::disk('public')->exists($donasi->foto))
+                                {{-- Saya perbaiki 'class.' menjadi 'class=' dan menghapus style inline --}}
+                                <div class="article-image detail-donasi-image" data-background="{{ asset('storage/' . $donasi->foto) }}">
+                                </div>
+                            @else
+                                <div class="article-image detail-donasi-image" data-background="{{ asset('assets/img/news/img13.jpg') }}">
+                                </div>
+                            @endif
                         </div>
 
+                        {{-- DETAIL ARTIKEL --}}
                         <div class="article-details">
                             <div class="article-category">
                                 <a href="#">{{ $donasi->kategori->kategori ?? 'Tanpa Kategori' }}</a>
@@ -42,10 +44,10 @@
                             </div>
 
                             <div class="article-description">
-                                {!! nl2br(e($donasi->deskripsi)) !!} {{-- nl2br untuk baris baru, e() untuk escaping HTML --}}
+                                {!! nl2br(e($donasi->deskripsi)) !!}
                             </div>
-
-                                                        
+                            
+                            {{-- LAPORAN PENGGUNAAN DANA --}}
                             <div class="mt-5">
                                 <h4 class="section-title">Laporan Penggunaan Dana</h4>
                                 @if($donasi->pengeluarans->isNotEmpty())
@@ -91,6 +93,7 @@
                                 @endif
                             </div>
                             
+                            {{-- TOMBOL DONASI --}}
                             <div class="article-cta mt-4">
                                 <button class="btn btn-success btn-lg" id="tombol-donasi" type="button"
                                         data-donasi-id="{{ $donasi->id }}" data-toggle="modal" data-target="#donasiModal">
@@ -111,6 +114,7 @@
     </div>
 </section>
 
+{{-- MODAL UNTUK DONASI --}}
 @if(isset($donasi) && $donasi)
 <div class="modal fade" tabindex="-1" role="dialog" id="donasiModal">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -122,18 +126,17 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="form-donasi"> {{-- action dan method akan dihandle oleh JavaScript (AJAX) --}}
+                <form id="form-donasi">
                     @csrf
                     <input type="hidden" name="id_daftar_donasi" id="id_daftar_donasi" value="{{ $donasi->id }}">
                     <div class="form-group">
                         <label for="jumlah_donasi">Jumlah Donasi (Rp)</label>
                         <input type="number" class="form-control form-control-lg"
                                placeholder="Contoh: 50000" name="jumlah_donasi" id="jumlah_donasi"
-                               min="10000" {{-- Contoh batas minimal donasi --}}
+                               min="10000"
                                required>
                         <small class="form-text text-muted">Minimal donasi Rp10.000.</small>
                     </div>
-                    {{-- Tambahkan field lain jika perlu, misal untuk pesan anonim, dll. --}}
                 </form>
             </div>
             <div class="modal-footer bg-whitesmoke br">
@@ -149,35 +152,18 @@
 @endsection
 
 @push('scripts')
-{{-- JavaScript untuk menangani submit donasi dan Midtrans akan berada di myscript.js --}}
-{{-- Pastikan myscript.js sudah di-include di footer layout Anda dan menangani klik #tombol-form-donasi --}}
-{{-- Contoh event handler di myscript.js sudah pernah kita bahas dan Anda miliki --}}
 <script>
-    // Jika Anda ingin menambahkan JavaScript spesifik untuk halaman ini saja, bisa di sini.
-    // Misalnya, untuk validasi input modal sebelum dikirim oleh myscript.js.
-    // Namun, logika utama AJAX dan Midtrans sebaiknya tetap terpusat di myscript.js.
-
-    <script>
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll('[data-background]').forEach(function (el) {
-        el.style.backgroundImage = 'url(' + el.getAttribute('data-background') + ')';
-        el.style.backgroundSize = 'cover';
-        el.style.backgroundPosition = 'center';
-    });
-});
-</script>
-
+    // Semua kode JavaScript untuk halaman ini digabung di sini
     $(document).ready(function() {
-    $('[data-background]').each(function() {
-    var background = $(this).attr('data-background');
-    $(this).css('background-image', 'url(' + background + ')');
-});
-        // Memastikan modal ditutup jika pembayaran berhasil atau dibatalkan
-        // Ini mungkin sudah dihandle di logika myscript.js Anda,
-        // tapi sebagai contoh jika Anda ingin interaksi spesifik di halaman ini.
+        
+        // Kode untuk mengatur gambar background (ini sudah benar)
+        document.querySelectorAll('[data-background]').forEach(function (el) {
+            el.style.backgroundImage = 'url(' + el.getAttribute('data-background') + ')';
+        });
+
+        // Kode untuk mereset modal setelah ditutup
         $('#donasiModal').on('hidden.bs.modal', function (e) {
-            // Reset form jika diperlukan, atau aktifkan kembali tombol
-            $('#form-donasi')[0].reset(); // Reset isi form
+            $('#form-donasi')[0].reset(); 
             $('#tombol-form-donasi').prop('disabled', false).html('<i class="fas fa-paper-plane"></i> Lanjutkan Pembayaran');
         });
     });
@@ -186,26 +172,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
 @push('styles')
 <style>
-    .article-style-c .article-description {
-        margin-top: 15px;
-        line-height: 1.8;
-        color: #34395e;
+    /* KODE CSS FINAL YANG SUDAH DIPERBAIKI */
+    .article-style-c .article-header {
+        position: relative; 
+        height: 500px; /* Atur tinggi wadah di sini */
+        border-radius: 10px; /* Pindahkan radius ke pembungkus */
+        overflow: hidden; /* Pastikan gambar tidak keluar dari radius */
     }
 
-    .article-image.detail-donasi-image {
-        height: 600px !important;
-        background-size: cover !important;
-        background-position: center !important;
-        background-repeat: no-repeat !important;
-        border-radius: 10px;
-    }
+    .article-style-c .article-image.detail-donasi-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover !important;
+    background-position: center !important;
+}
 
-    .article-cta {
-        margin-bottom: 40px;
-    }
+.article-style-c .article-details {
+    margin-top: 20px;
+}
 </style>
 @endpush
-
-
-
-

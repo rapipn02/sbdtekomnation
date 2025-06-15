@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     <title>TekomDonate</title>
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon-tekom.png') }}">
+
+    
     
 
     <!-- General CSS Files -->
@@ -88,7 +91,7 @@
                             </div>
                         </div>
                         <div class="simple-footer">
-                            Copyright &copy; Stisla 2025
+                            Copyright &copy; Kelompok 3 | 2025
                         </div>
                     </div>
                 </div>

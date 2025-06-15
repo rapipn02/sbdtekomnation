@@ -235,6 +235,15 @@
             <div class="card">
                 <div class="card-header">
                     <h4>Grafik Jumlah Seluruh Donasi</h4>
+                    <div class="card-header-action">
+            <select class="form-control" id="filter-kegiatan">
+                <option value="">Semua Kegiatan</option>
+                {{-- Loop ini mengambil data dari controller --}}
+                @foreach ($daftar_donasi as $kegiatan)
+                    <option value="{{ $kegiatan->id }}">{{ $kegiatan->judul }}</option>
+                @endforeach
+            </select>
+        </div>
                 </div>
                 <div class="card-body">
                     <canvas id="donasiChart" height="158"></canvas>

@@ -31,7 +31,7 @@
                   <address>
                     <strong>Dikirim :</strong><br>
                    TekomDonate<br>
-                   Banjarbaru, Indonesia
+                   Padang, Indonesia
                   </address>
                 </div>
               </div>

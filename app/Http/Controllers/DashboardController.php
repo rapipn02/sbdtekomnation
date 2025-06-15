@@ -25,14 +25,12 @@ class DashboardController extends Controller
             ->orderByDesc('total_donasi')
             ->get();
             
-        // PERUBAHAN 1: Mengirim daftar semua kegiatan donasi ke view untuk filter dropdown.
-        // Variabel '$daftar' diubah menjadi '$daftar_count' agar lebih jelas.
         return view('dashboard', [
             'data' => $usersByTotalDonasi,
             'user' => User::count(),
             'kategori' => Kategori::count(),
-            'daftar' => DaftarDonasi::count(), // Tetap ada untuk card statistik
-            'daftar_donasi' => DaftarDonasi::all() // Data baru untuk mengisi dropdown filter
+            'daftar' => DaftarDonasi::count(),
+            'daftar_donasi' => DaftarDonasi::all()
         ]);
     }
 
@@ -42,18 +40,21 @@ class DashboardController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function grafik(Request $request) // PERUBAHAN 2: Menambahkan Request $request
+    public function grafik(Request $request)
     {
         // Query dasar untuk mengambil data donasi.
         $query = Donasi::selectRaw("DATE_FORMAT(created_at, '%Y-%m') as bulan, SUM(jumlah) as total")
             ->whereIn('status', ['settlement', 'capture']);
 
-        // --- PERUBAHAN 3: Menambahkan logika filter berdasarkan ID kegiatan ---
+        // --- PERUBAHAN DI SINI ---
+        // Logika `if (Auth::user()->is_admin != 1)` yang memfilter berdasarkan user_id Dihapus.
+        // Dengan ini, query akan mengambil data dari semua user, baik untuk admin maupun pengguna biasa.
+        // --- AKHIR PERUBAHAN ---
+
         // Cek apakah ada input 'kegiatan_id' dari request AJAX dan tidak kosong.
         if ($request->filled('kegiatan_id')) {
             $query->where('daftar_donasi_id', $request->kegiatan_id);
         }
-        // --- Akhir dari logika filter ---
 
         // Eksekusi query setelah filter diterapkan.
         $donasiPerBulan = $query->groupBy('bulan')
@@ -80,7 +81,8 @@ class DashboardController extends Controller
      */
     public function filterDonasi(Request $request)
     {
-        // Memeriksa apakah pengguna adalah admin.
+        // Logika ini tetap membedakan antara admin dan pengguna untuk kartu statistik,
+        // hanya grafik yang disamakan.
         if(Auth::user()->is_admin == 1){
             $bulan = $request->bulan;
             $tahun = date('Y');
@@ -88,12 +90,10 @@ class DashboardController extends Controller
             $startDate = Carbon::createFromDate($tahun, $bulan, 1)->startOfMonth();
             $endDate = Carbon::createFromDate($tahun, $bulan, 1)->endOfMonth();
         
-            // Menghitung total donasi yang berhasil.
             $totalDonasi = Donasi::whereBetween('created_at', [$startDate, $endDate])
                 ->whereIn('status', ['settlement', 'capture'])
                 ->sum('jumlah');
         
-            // Menghitung jumlah per status.
             $jumlahPending = Donasi::whereBetween('created_at', [$startDate, $endDate])
                 ->where('status', 'pending')
                 ->count();
@@ -113,7 +113,6 @@ class DashboardController extends Controller
                 'jumlah_expired' => $jumlahExpired,
             ];
 
-        // Jika bukan admin, filter berdasarkan user yang login.
         } else {
             $userId = auth()->user()->id;
             $bulan = $request->bulan;
