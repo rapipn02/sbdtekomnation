@@ -1,8 +1,17 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8" />
-		<title>TekomDonate</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TekomDonate - Invoice</title>
+    
+    <link rel="icon" href="{{ asset('favicon.ico') }}">
+
+    <style>
+        /* ... CSS invoice Anda tetap di sini ... */
+    </style>
+</head>
+    
 
 		<style>
 			.invoice-box {

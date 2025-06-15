@@ -1,10 +1,15 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="/dashboard">TekomDonate</a>
+            <a href="/dashboard">
+                <img src="{{ asset('assets/img/favicon-tekom.png') }}" alt="logo" width="35" class="mr-1">
+                <span class="text-dark">Tekom</span><span style="color: #015D2E;">Donate</span> </a>
+            </a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="/dashboard">ID</a>
+            <a href="/dashboard">
+                <img src="{{ asset('assets/img/favicon-tekom.png') }}" alt="logo" width="30">
+            </a>
         </div>
         @can('admin')
             <ul class="sidebar-menu">

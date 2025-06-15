@@ -40,13 +40,15 @@
                                 <td>{{ $item->rincian }}</td>
                                 <td>Rp{{ number_format($item->jumlah, 0, ',', '.') }}</td>
                                 <td>{{ $item->created_at->format('d M Y') }}</td>
-                                <td>
-                                    @if ($item->foto)
-                                        <a href="{{ asset('storage/' . $item->foto) }}" class="btn btn-sm btn-primary" target="_blank">Lihat</a>
-                                    @else
-                                        -
-                                    @endif
-                                </td>
+                               <td>
+                                @if ($item->foto)
+                                    <a href="{{ asset('storage/' . $item->foto) }}" target="_blank">
+                                        <img src="{{ asset('storage/' . $item->foto) }}" alt="Bukti" class="bukti-thumbnail">
+                                    </a>
+                                @else
+                                    -
+                                @endif
+                            </td>
                             </tr>
                             @empty
                             <tr>
