@@ -92,9 +92,7 @@
 @endsection
 
 @push('styles')
-    {{-- Anda bisa menambahkan CSS khusus di sini jika diperlukan --}}
 @endpush
 
 @push('scripts')
-    {{-- Anda bisa menambahkan skrip JS khusus di sini jika diperlukan --}}
 @endpush
