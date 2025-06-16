@@ -1503,8 +1503,8 @@ h6 .badge {
   color: #fff !important;
   line-height: 25px;
   font-size: 12px;
-  min-width: 35px;
-  min-height: 35px;
+  min-width: 15px;
+  min-height: 15px;
 }
 
 .btn-secondary, .btn-secondary.disabled {
@@ -1625,13 +1625,13 @@ h6 .badge {
   border-color: #015D2E
 }
 .btn-primary:focus, .btn-primary.disabled:focus {
-  background-color: #394eea !important;
+  background-color: #015D2E !important;
 }
 .btn-primary:focus:active, .btn-primary.disabled:focus:active {
-  background-color: #394eea !important;
+  background-color: #015D2E !important;
 }
 .btn-primary:active, .btn-primary:hover, .btn-primary.disabled:active, .btn-primary.disabled:hover {
-  background-color: #394eea !important;
+  background-color: #015D2E !important;
 }
 
 .btn-outline-primary, .btn-outline-primary.disabled {

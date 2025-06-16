@@ -7,9 +7,7 @@
       <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon-tekom.png') }}">
 
 
-      <div class="section-header-breadcrumb">
-        <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-        <div class="breadcrumb-item">Invoice</div>
+      
       </div>
     </div>
     <div class="section-body">
