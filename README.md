@@ -1,5 +1,5 @@
 <p align="left">
-  <img src="https://raw.githubusercontent.com/username/tekomdonation/main/public/assets/img/Logo-Hima.png" alt="logo" width="80" style="vertical-align:middle; margin-right:10px;">
+<img src="https://raw.githubusercontent.com/rapipn02/sbdtekomnation/master/public/assets/img/Logo-Hima.png" width="300">
   <span style="font-size: 2em; font-weight: bold; vertical-align:middle;">TEKOMDONATION</span>
 </p>
 # TEKOMDONATION
