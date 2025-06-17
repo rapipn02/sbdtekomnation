@@ -5,7 +5,7 @@
   </tr>
 </table>
 
-# TEKOMDONANATE
+# TEKOMDONATE
 
 **TEKOMDONATE** adalah sebuah platform donasi digital yang dirancang untuk memudahkan proses penggalangan dana dan penyaluran bantuan secara aman, cepat, dan transparan. Platform ini dikembangkan sebagai solusi untuk memfasilitasi kegiatan donasi dari berbagai pihak, mulai dari individu, kelas, organisasi, hingga donatur umum, dalam mendukung kegiatan sosial, pendidikan, dan kemanusiaan.
 
@@ -16,7 +16,7 @@ Dengan fitur visualisasi data dan riwayat transaksi yang transparan, TEKOMDONATE
 ## 🚀 Fitur Utama
 
 - 💰 **Donasi Online Multimetode**  
-  Mendukung berbagai metode pembayaran termasuk transfer bank, e-wallet, dan gateway pembayaran seperti Midtrans (jika digunakan di sisi backend).
+  Mendukung berbagai metode pembayaran termasuk transfer bank, e-wallet, dan gateway pembayaran seperti Midtrans.
 
 - 📊 **Grafik Donasi Dinamis**  
   Menampilkan statistik donasi dari berbagai kegiatan sosial yang sedang berlangsung.
