@@ -1,66 +1,111 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# TEKOMDONATION
 
-## About Laravel
+**TEKOMDONATION** adalah sebuah platform donasi digital yang dirancang untuk memudahkan proses penggalangan dana dan penyaluran bantuan secara aman, cepat, dan transparan. Platform ini dikembangkan sebagai solusi untuk memfasilitasi kegiatan donasi dari berbagai pihak, mulai dari individu, kelas, organisasi, hingga donatur umum, dalam mendukung kegiatan sosial, pendidikan, dan kemanusiaan.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Dengan fitur visualisasi data dan riwayat transaksi yang transparan, TEKOMDONATION menjamin bahwa setiap dana yang diterima dan disalurkan dapat dipantau dengan jelas oleh publik maupun pihak pengelola.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🚀 Fitur Utama
 
-## Learning Laravel
+- 💰 **Donasi Online Multimetode**  
+  Mendukung berbagai metode pembayaran termasuk transfer bank, e-wallet, dan gateway pembayaran seperti Midtrans (jika digunakan di sisi backend).
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- 📊 **Grafik Donasi Dinamis**  
+  Menampilkan statistik donasi dari berbagai kegiatan sosial yang sedang berlangsung.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- 🏆 **Leaderboard Donatur Terbanyak**  
+  Fitur klasemen untuk menampilkan siapa saja donatur yang paling banyak berkontribusi.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- 🔎 **Transparansi Penggunaan Dana**  
+  Semua dana yang masuk dan keluar didokumentasikan melalui laporan pengeluaran lengkap dengan bukti transaksi (foto dan rincian).
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## 🛠️ Stack Teknologi
 
-### Premium Partners
+| Layer       | Teknologi     |
+|-------------|---------------|
+| Backend     | Laravel (PHP) |
+| Database    | MySQL         |
+| Frontend    | Blade Template / Vue (jika ada) |
+| Auth        | Laravel Breeze / Sanctum (opsional) |
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+---
 
-## Contributing
+## ⚙️ Cara Instalasi
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Ikuti langkah-langkah berikut untuk menginstal dan menjalankan proyek Laravel ini secara lokal:
 
-## Code of Conduct
+1. **Clone repository**
+   ```bash
+   git clone https://github.com/username/tekomdonation.git
+   cd tekomdonation
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+2. **Install dependency PHP**
+   ```bash
+   composer install
+   ```
 
-## Security Vulnerabilities
+3. **Copy environment file**
+   ```bash
+   cp .env.example .env
+   ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+4. **Generate application key**
+   ```bash
+   php artisan key:generate
+   ```
 
-## License
+5. **Setup koneksi database**
+   - Buka file `.env`
+   - Atur `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD` sesuai konfigurasi MySQL kamu
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+6. **Jalankan migrasi database**
+   ```bash
+   php artisan migrate --seed
+   ```
+
+7. **(Opsional) Jalankan queue atau scheduler jika digunakan**
+   ```bash
+   php artisan queue:work
+   php artisan schedule:work
+   ```
+
+---
+
+## ▶️ Cara Menjalankan Aplikasi
+
+Setelah semua instalasi dan konfigurasi selesai:
+
+```bash
+php artisan serve
+```
+
+Buka browser dan akses:
+
+```
+http://127.0.0.1:8000
+```
+
+---
+
+## 🙌 Kontribusi
+
+Kami sangat terbuka terhadap kontribusi! Jika kamu menemukan bug, ingin menambahkan fitur baru, atau melakukan perbaikan dokumentasi, silakan buka pull request atau buat issue.
+
+---
+
+## 📄 Lisensi
+
+Proyek ini menggunakan lisensi **MIT** – silakan lihat file LICENSE untuk informasi lebih lanjut.
+
+---
+
+## 👨‍💻 Author
+
+Proyek ini dikembangkan oleh tim HIMATEKOM.  
+Kontribusi dari para mahasiswa Teknik Komputer Universitas Andalas.  
+Untuk pertanyaan dan kerjasama, hubungi melalui email atau sosial media resmi HIMATEKOM.
