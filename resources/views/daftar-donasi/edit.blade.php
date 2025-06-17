@@ -3,8 +3,7 @@
     <section class="section">
         <div class="section-header">
             <h1>Data Daftar Donasi</h1>
-                
-            </div>
+            {{-- PERBAIKAN: Tag </div> yang berlebih sudah dihapus dari sini --}}
         </div>
 
         <div class="section-body">
@@ -43,7 +42,8 @@
                                 </div>
                                 <div class="form-group mb-2">
                                     <label>Deskripsi</label>
-                                    <textarea name="deskripsi" id="" cols="30" rows="30" class="form-control @error('juddeskripsiul') is-invalid @enderror">{{ $daftar->deskripsi }}</textarea>
+                                    {{-- PERBAIKAN: Mengganti @error('juddeskripsiul') menjadi @error('deskripsi') --}}
+                                    <textarea name="deskripsi" id="" cols="30" rows="10" class="form-control @error('deskripsi') is-invalid @enderror">{{ $daftar->deskripsi }}</textarea>
                                     @error('deskripsi')
                                         <div class="invalid-feedback">
                                             {{ $message }}

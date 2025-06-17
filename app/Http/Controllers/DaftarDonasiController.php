@@ -12,6 +12,7 @@ class DaftarDonasiController extends Controller
 {
     public function index()
     {
+        // Path ini sudah sesuai dengan struktur folder Anda
         return view('daftar-donasi.index', [
             'donasis' => DaftarDonasi::all()
         ]);
@@ -19,6 +20,7 @@ class DaftarDonasiController extends Controller
 
     public function create()
     {
+        // Path ini sudah sesuai dengan struktur folder Anda
         return view('daftar-donasi.create', [
             'kategoris' => Kategori::all()
         ]);
@@ -30,7 +32,7 @@ class DaftarDonasiController extends Controller
             'judul' => 'required|max:255',
             'kategori_id' => 'required',
             'deskripsi' => 'required',
-            'foto' => 'image|file|max:5000' // Foto bisa null saat create
+            'foto' => 'image|file|max:5000'
         ]);
 
         if ($request->file('foto')) {
@@ -45,6 +47,7 @@ class DaftarDonasiController extends Controller
 
     public function edit(DaftarDonasi $daftarDonasi)
     {
+        // Path ini sudah sesuai dengan struktur folder Anda
         return view('daftar-donasi.edit', [
             'daftar' => $daftarDonasi,
             'kategoris' => Kategori::all()
@@ -63,11 +66,9 @@ class DaftarDonasiController extends Controller
         $validateData = $request->validate($rules);
 
         if ($request->file('foto')) {
-            // Hapus foto lama jika ada
             if ($daftarDonasi->foto) {
                 Storage::disk('public')->delete($daftarDonasi->foto);
             }
-            // Simpan foto baru
             $validateData['foto'] = $request->file('foto')->store('foto-donasi', 'public');
         }
 
@@ -79,7 +80,6 @@ class DaftarDonasiController extends Controller
 
     public function destroy(DaftarDonasi $daftarDonasi)
     {
-        // Hapus foto jika ada
         if ($daftarDonasi->foto) {
             Storage::disk('public')->delete($daftarDonasi->foto);
         }
@@ -90,8 +90,6 @@ class DaftarDonasiController extends Controller
 
     public function getTotalDonasi(DaftarDonasi $daftarDonasi)
     {
-        // Menghitung total donasi dari relasi 'donasis'
-        // Pastikan nama kolom untuk jumlah donasi di tabel 'donasis' Anda adalah 'jumlah'
         $total = $daftarDonasi->donasis()->sum('jumlah');
 
         return response()->json([
