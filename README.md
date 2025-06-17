@@ -35,8 +35,8 @@ Dengan fitur visualisasi data dan riwayat transaksi yang transparan, TEKOMDONATI
 |-------------|---------------|
 | Backend     | Laravel (PHP) |
 | Database    | MySQL         |
-| Frontend    | Blade Template / Vue (jika ada) |
-| Auth        | Laravel Breeze / Sanctum (opsional) |
+| Frontend    | Blade Template & Bootstrap |
+| Auth        | Laravel Sanctum  |
 
 ---
 
@@ -112,6 +112,6 @@ Proyek ini menggunakan lisensi **MIT** – silakan lihat file LICENSE untuk info
 
 ## 👨‍💻 Author
 
-Proyek ini dikembangkan oleh tim HIMATEKOM.  
+Proyek ini dikembangkan oleh tim SBD KELOMPOK A.  
 Kontribusi dari para mahasiswa Teknik Komputer Universitas Andalas.  
 Untuk pertanyaan dan kerjasama, hubungi melalui email atau sosial media resmi HIMATEKOM.
