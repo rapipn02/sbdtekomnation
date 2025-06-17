@@ -18,7 +18,7 @@ class UserController extends Controller
     
    public function index()
     {
-        $users = User::latest()->paginate(10);
+    $users = User::with('jenis')->latest()->paginate(10);
         return view('dashboard.users.index', compact('users'));
     }
 
@@ -63,7 +63,7 @@ class UserController extends Controller
         ]);
 
         // Redirect ke halaman daftar pengguna dengan pesan sukses
-        return redirect()->route('dashboard.users.index')->with('success', 'Pengguna baru berhasil ditambahkan.');
+        return redirect()->route('dashboard.users.index')->with('success', 'Pengguna baru berhasil ditambahkan');
     }
 
     /**

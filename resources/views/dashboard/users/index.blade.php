@@ -25,13 +25,13 @@
                         @if (session('success'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 {{ session('success') }}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                               
                             </div>
                         @endif
                         @if (session('error'))
                             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                 {{ session('error') }}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                
                             </div>
                         @endif
 
@@ -43,6 +43,7 @@
                                         <th>Nama</th>
                                         <th>Email</th>
                                         <th>Peran</th>
+                                        <th>Jenis</th>
                                         <th>Email Terverifikasi</th>
                                         <th>Bergabung Pada</th>
                                     </tr>
@@ -60,6 +61,12 @@
                                                 <span class="badge badge-secondary">User</span>
                                             @endif
                                         </td>
+                                        <td>
+                                            @if ($user->jenis)
+                                                {{ $user->jenis->nama_jenis }}
+                                            @else
+                                                <span class="badge badge-warning">Tidak Diketahui</span>
+                                            @endif
                                         <td>
                                             @if ($user->email_verified_at)
                                                 <span class="badge badge-primary">{{ $user->email_verified_at->format('d M Y, H:i') }}</span>
