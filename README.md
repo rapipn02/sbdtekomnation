@@ -1,7 +1,7 @@
 <table>
   <tr>
     <td><img src="https://github.com/user-attachments/assets/67b8e88a-fe88-47bb-b7b8-333f8499bc82" alt="Logo" width="60"></td>
-    <td><h1 style="margin-left: 10px;">TEKOMDONATION</h1></td>
+    <td><h1 style="margin-left: 10px;">TEKOMDONATE</h1></td>
   </tr>
 </table>
 
