@@ -6,6 +6,7 @@ use App\Models\User; // Pastikan Anda memiliki model User
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash; // Untuk hashing password
 use Illuminate\Support\Facades\Validator; // Untuk validasi
+use App\Models\JenisDonatur;
 
 class UserController extends Controller
 {
@@ -16,61 +17,53 @@ class UserController extends Controller
      */
     
    public function index()
-{
-    $users = User::latest()->paginate(10); // Atau sesuai logika Anda
-
-    // Baris ini untuk menampilkan view, pastikan path view-nya benar
-    return view('dashboard.users.index', compact('users'));
-
-    // Hapus atau komentari baris di bawah ini
-    // return response()->json($users);
-}
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
     {
-        // Kembalikan view untuk form tambah pengguna
-        // return view('dashboard.users.create');
-        return response()->json(['message' => 'Show form to create user']);
+        $users = User::latest()->paginate(10);
+        return view('dashboard.users.index', compact('users'));
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * Menampilkan form untuk membuat pengguna baru.
+     */
+    public function create()
+    {
+        // Ambil semua data jenis donatur untuk ditampilkan di form
+        $jenisDonatur = JenisDonatur::all(); 
+        
+        // Kirim data jenis donatur ke view
+        return view('dashboard.users.create', compact('jenisDonatur'));
+    }
+
+    /**
+     * Menyimpan pengguna baru ke dalam database.
      */
     public function store(Request $request)
     {
-        // Validasi input
+        // Validasi input dari form, termasuk id_jenis
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
-            // Tambahkan validasi lain jika perlu, misal untuk role
+            'is_admin' => 'required|boolean',
+            'id_jenis' => 'required|exists:jenis_donatur,id_jenis', // Validasi untuk id_jenis
         ]);
 
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
-            // Atau untuk API:
-            // return response()->json($validator->errors(), 422);
         }
 
-        // Buat pengguna baru
-        $user = User::create([
+        // Buat pengguna baru dengan id_jenis
+        User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            // 'role' => $request->role, // Jika ada kolom role
+            'is_admin' => $request->is_admin,
+            'id_jenis' => $request->id_jenis, // Tambahkan ini
+            'email_verified_at' => now()
         ]);
 
         // Redirect ke halaman daftar pengguna dengan pesan sukses
-        // return redirect()->route('users.index')->with('success', 'Pengguna berhasil ditambahkan.');
-        return response()->json(['message' => 'User created successfully', 'user' => $user], 201);
+        return redirect()->route('dashboard.users.index')->with('success', 'Pengguna baru berhasil ditambahkan.');
     }
 
     /**
