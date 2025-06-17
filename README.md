@@ -1,7 +1,10 @@
-<p align="left">
-<img src="https://raw.githubusercontent.com/rapipn02/sbdtekomnation/master/public/assets/img/Logo-Hima.png" width="300">
-  <span style="font-size: 2em; font-weight: bold; vertical-align:middle;">TEKOMDONATION</span>
-</p>
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/67b8e88a-fe88-47bb-b7b8-333f8499bc82" alt="Logo" width="60"></td>
+    <td><h1 style="margin-left: 10px;">TEKOMDONATION</h1></td>
+  </tr>
+</table>
+
 # TEKOMDONATION
 
 **TEKOMDONATION** adalah sebuah platform donasi digital yang dirancang untuk memudahkan proses penggalangan dana dan penyaluran bantuan secara aman, cepat, dan transparan. Platform ini dikembangkan sebagai solusi untuk memfasilitasi kegiatan donasi dari berbagai pihak, mulai dari individu, kelas, organisasi, hingga donatur umum, dalam mendukung kegiatan sosial, pendidikan, dan kemanusiaan.
