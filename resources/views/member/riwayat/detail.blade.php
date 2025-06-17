@@ -1,15 +1,11 @@
-
 @extends('layouts.app')
 @section('content')
 <section class="section">
     <div class="section-header">
       <h1>Invoice</h1>
       <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon-tekom.png') }}">
-
-
-      
-      </div>
     </div>
+
     <div class="section-body">
       <div class="invoice">
         <div class="invoice-print">
@@ -74,12 +70,6 @@
                 <div class="col-lg-8">
                   <div class="section-title">Terimakasih</div>
                   <p class="section-lead">Anda sudah membantu saudara kita yang sedang dalam kesusahaan.Semoga kebaikan anda dibalas oleh tuhan yang maha Esa</p>
-                  {{-- <div class="d-flex">
-                    <div class="mr-2 bg-visa" data-width="61" data-height="38"></div>
-                    <div class="mr-2 bg-jcb" data-width="61" data-height="38"></div>
-                    <div class="mr-2 bg-mastercard" data-width="61" data-height="38"></div>
-                    <div class="bg-paypal" data-width="61" data-height="38"></div>
-                  </div> --}}
                 </div>
                 <div class="col-lg-4 text-right">
                   <hr class="mt-2 mb-2">
@@ -101,5 +91,5 @@
         </div>
       </div>
     </div>
-  </section>
+</section>
 @endsection
