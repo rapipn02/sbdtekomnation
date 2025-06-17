@@ -1,12 +1,15 @@
-<p align="left">
-  <img src="https://raw.githubusercontent.com/username/tekomdonation/main/public/assets/img/Logo-Hima.png" alt="logo" width="80" style="vertical-align:middle; margin-right:10px;">
-  <span style="font-size: 2em; font-weight: bold; vertical-align:middle;">TEKOMDONATION</span>
-</p>
-# TEKOMDONATION
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/67b8e88a-fe88-47bb-b7b8-333f8499bc82" alt="Logo" width="60"></td>
+    <td><h1 style="margin-left: 10px;">TEKOMDONATE</h1></td>
+  </tr>
+</table>
 
-**TEKOMDONATION** adalah sebuah platform donasi digital yang dirancang untuk memudahkan proses penggalangan dana dan penyaluran bantuan secara aman, cepat, dan transparan. Platform ini dikembangkan sebagai solusi untuk memfasilitasi kegiatan donasi dari berbagai pihak, mulai dari individu, kelas, organisasi, hingga donatur umum, dalam mendukung kegiatan sosial, pendidikan, dan kemanusiaan.
+# TEKOMDONANATE
 
-Dengan fitur visualisasi data dan riwayat transaksi yang transparan, TEKOMDONATION menjamin bahwa setiap dana yang diterima dan disalurkan dapat dipantau dengan jelas oleh publik maupun pihak pengelola.
+**TEKOMDONATE** adalah sebuah platform donasi digital yang dirancang untuk memudahkan proses penggalangan dana dan penyaluran bantuan secara aman, cepat, dan transparan. Platform ini dikembangkan sebagai solusi untuk memfasilitasi kegiatan donasi dari berbagai pihak, mulai dari individu, kelas, organisasi, hingga donatur umum, dalam mendukung kegiatan sosial, pendidikan, dan kemanusiaan.
+
+Dengan fitur visualisasi data dan riwayat transaksi yang transparan, TEKOMDONATE menjamin bahwa setiap dana yang diterima dan disalurkan dapat dipantau dengan jelas oleh publik maupun pihak pengelola.
 
 ---
 
@@ -32,8 +35,8 @@ Dengan fitur visualisasi data dan riwayat transaksi yang transparan, TEKOMDONATI
 |-------------|---------------|
 | Backend     | Laravel (PHP) |
 | Database    | MySQL         |
-| Frontend    | Blade Template / Vue (jika ada) |
-| Auth        | Laravel Breeze / Sanctum (opsional) |
+| Frontend    | Blade Template & Bootstrap |
+| Auth        | Laravel Sanctum  |
 
 ---
 
@@ -109,6 +112,6 @@ Proyek ini menggunakan lisensi **MIT** – silakan lihat file LICENSE untuk info
 
 ## 👨‍💻 Author
 
-Proyek ini dikembangkan oleh tim HIMATEKOM.  
+Proyek ini dikembangkan oleh tim SBD KELOMPOK A.  
 Kontribusi dari para mahasiswa Teknik Komputer Universitas Andalas.  
 Untuk pertanyaan dan kerjasama, hubungi melalui email atau sosial media resmi HIMATEKOM.
