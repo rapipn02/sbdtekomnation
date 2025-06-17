@@ -58,7 +58,7 @@
                                             @if ($user->is_admin)
                                                 <span class="badge badge-success">Admin</span>
                                             @else
-                                                <span class="badge badge-secondary">User</span>
+                                                <span class="badge badge-dark">User</span>
                                             @endif
                                         </td>
                                         <td>
