@@ -7,9 +7,9 @@
 
 # TEKOMDONATION
 
-**TEKOMDONATION** adalah sebuah platform donasi digital yang dirancang untuk memudahkan proses penggalangan dana dan penyaluran bantuan secara aman, cepat, dan transparan. Platform ini dikembangkan sebagai solusi untuk memfasilitasi kegiatan donasi dari berbagai pihak, mulai dari individu, kelas, organisasi, hingga donatur umum, dalam mendukung kegiatan sosial, pendidikan, dan kemanusiaan.
+**TEKOMDONATE** adalah sebuah platform donasi digital yang dirancang untuk memudahkan proses penggalangan dana dan penyaluran bantuan secara aman, cepat, dan transparan. Platform ini dikembangkan sebagai solusi untuk memfasilitasi kegiatan donasi dari berbagai pihak, mulai dari individu, kelas, organisasi, hingga donatur umum, dalam mendukung kegiatan sosial, pendidikan, dan kemanusiaan.
 
-Dengan fitur visualisasi data dan riwayat transaksi yang transparan, TEKOMDONATION menjamin bahwa setiap dana yang diterima dan disalurkan dapat dipantau dengan jelas oleh publik maupun pihak pengelola.
+Dengan fitur visualisasi data dan riwayat transaksi yang transparan, TEKOMDONATE menjamin bahwa setiap dana yang diterima dan disalurkan dapat dipantau dengan jelas oleh publik maupun pihak pengelola.
 
 ---
 
